@@ -303,7 +303,6 @@ main {
       height: 0;
       padding-bottom: 75%;
       background-color: #eee;
-      background-image: url('/assets/images/placeholder.png');
       background-position: center;
       background-size: cover;
       transition: box-shadow .1s ease-in-out;

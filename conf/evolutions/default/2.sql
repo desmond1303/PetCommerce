@@ -36,6 +36,40 @@ INSERT INTO item(name, description, price, quantity) VALUES ('Item 30', 'A Great
 INSERT INTO item(name, description, price, quantity) VALUES ('Item 31', 'A Great Item!', 29.99, 23);
 INSERT INTO item(name, description, price, quantity) VALUES ('Item 32', 'A Great Item!', 29.99, 73);
 
+INSERT INTO photo(item_id, path, main) SELECT id, '/assets/images/placeholder.png', true FROM item WHERE name = 'Item 1';
+INSERT INTO photo(item_id, path, main) SELECT id, '/assets/images/placeholder.png', true FROM item WHERE name = 'Item 2';
+INSERT INTO photo(item_id, path, main) SELECT id, '/assets/images/placeholder.png', true FROM item WHERE name = 'Item 3';
+INSERT INTO photo(item_id, path, main) SELECT id, '/assets/images/placeholder.png', true FROM item WHERE name = 'Item 4';
+INSERT INTO photo(item_id, path, main) SELECT id, '/assets/images/placeholder.png', true FROM item WHERE name = 'Item 5';
+INSERT INTO photo(item_id, path, main) SELECT id, '/assets/images/placeholder.png', true FROM item WHERE name = 'Item 6';
+INSERT INTO photo(item_id, path, main) SELECT id, '/assets/images/placeholder.png', true FROM item WHERE name = 'Item 7';
+INSERT INTO photo(item_id, path, main) SELECT id, '/assets/images/placeholder.png', true FROM item WHERE name = 'Item 8';
+INSERT INTO photo(item_id, path, main) SELECT id, '/assets/images/placeholder.png', true FROM item WHERE name = 'Item 9';
+INSERT INTO photo(item_id, path, main) SELECT id, '/assets/images/placeholder.png', true FROM item WHERE name = 'Item 10';
+INSERT INTO photo(item_id, path, main) SELECT id, '/assets/images/placeholder.png', true FROM item WHERE name = 'Item 11';
+INSERT INTO photo(item_id, path, main) SELECT id, '/assets/images/placeholder.png', true FROM item WHERE name = 'Item 11';
+INSERT INTO photo(item_id, path, main) SELECT id, '/assets/images/placeholder.png', true FROM item WHERE name = 'Item 12';
+INSERT INTO photo(item_id, path, main) SELECT id, '/assets/images/placeholder.png', true FROM item WHERE name = 'Item 13';
+INSERT INTO photo(item_id, path, main) SELECT id, '/assets/images/placeholder.png', true FROM item WHERE name = 'Item 14';
+INSERT INTO photo(item_id, path, main) SELECT id, '/assets/images/placeholder.png', true FROM item WHERE name = 'Item 15';
+INSERT INTO photo(item_id, path, main) SELECT id, '/assets/images/placeholder.png', true FROM item WHERE name = 'Item 16';
+INSERT INTO photo(item_id, path, main) SELECT id, '/assets/images/placeholder.png', true FROM item WHERE name = 'Item 17';
+INSERT INTO photo(item_id, path, main) SELECT id, '/assets/images/placeholder.png', true FROM item WHERE name = 'Item 18';
+INSERT INTO photo(item_id, path, main) SELECT id, '/assets/images/placeholder.png', true FROM item WHERE name = 'Item 19';
+INSERT INTO photo(item_id, path, main) SELECT id, '/assets/images/placeholder.png', true FROM item WHERE name = 'Item 20';
+INSERT INTO photo(item_id, path, main) SELECT id, '/assets/images/placeholder.png', true FROM item WHERE name = 'Item 21';
+INSERT INTO photo(item_id, path, main) SELECT id, '/assets/images/placeholder.png', true FROM item WHERE name = 'Item 22';
+INSERT INTO photo(item_id, path, main) SELECT id, '/assets/images/placeholder.png', true FROM item WHERE name = 'Item 23';
+INSERT INTO photo(item_id, path, main) SELECT id, '/assets/images/placeholder.png', true FROM item WHERE name = 'Item 24';
+INSERT INTO photo(item_id, path, main) SELECT id, '/assets/images/placeholder.png', true FROM item WHERE name = 'Item 25';
+INSERT INTO photo(item_id, path, main) SELECT id, '/assets/images/placeholder.png', true FROM item WHERE name = 'Item 26';
+INSERT INTO photo(item_id, path, main) SELECT id, '/assets/images/placeholder.png', true FROM item WHERE name = 'Item 27';
+INSERT INTO photo(item_id, path, main) SELECT id, '/assets/images/placeholder.png', true FROM item WHERE name = 'Item 28';
+INSERT INTO photo(item_id, path, main) SELECT id, '/assets/images/placeholder.png', true FROM item WHERE name = 'Item 29';
+INSERT INTO photo(item_id, path, main) SELECT id, '/assets/images/placeholder.png', true FROM item WHERE name = 'Item 30';
+INSERT INTO photo(item_id, path, main) SELECT id, '/assets/images/placeholder.png', true FROM item WHERE name = 'Item 31';
+INSERT INTO photo(item_id, path, main) SELECT id, '/assets/images/placeholder.png', true FROM item WHERE name = 'Item 32';
+
 # --- !Downs
 
-TRUNCATE "user" CASCADE;
+TRUNCATE "user", photo, item CASCADE;
