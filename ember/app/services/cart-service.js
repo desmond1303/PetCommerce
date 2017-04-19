@@ -8,7 +8,7 @@ export default Base.extend({
         withCredentials: true,
       },
       data: {
-        ...item,
+        id: item.id,
         quantity: quantity,
       },
     });
