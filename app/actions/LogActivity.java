@@ -8,7 +8,8 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * The interface Log activity.
+ * The Log activity Annotation.
+ * Annotate all Classes or Methods to Log the activity they perform to the system log.
  *
  * @author dinopraso
  */
@@ -17,7 +18,7 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface LogActivity {
 	/**
-	 * Message string.
+	 * A Custom Message. Optional. Will override default log pattern.
 	 *
 	 * @return the string
 	 */

@@ -13,7 +13,7 @@ import javax.inject.Inject;
 import java.util.concurrent.Callable;
 
 /**
- * The type Base controller.
+ * The Abstract Base controller.
  */
 @LogActivity
 abstract class BaseController extends Controller {
@@ -63,7 +63,7 @@ abstract class BaseController extends Controller {
 	 * Wrapper for publicly available methods.
 	 *
 	 * @param block the block
-	 * @return the result
+	 * return the {@link Result}
 	 */
 	Result wrapForPublic(final Callable block) {
 		return catchExceptions(() -> ok(Json.toJson(block.call())));
@@ -73,7 +73,7 @@ abstract class BaseController extends Controller {
 	 * Wrapper for registered users.
 	 *
 	 * @param block the block
-	 * @return the result
+	 * return the {@link Result}
 	 */
 	Result wrapForUser(final Callable block) {
 		return catchExceptions(() -> {
@@ -90,7 +90,7 @@ abstract class BaseController extends Controller {
 	 * Wrapper for administrators.
 	 *
 	 * @param block the block
-	 * @return the result
+	 * return the {@link Result}
 	 */
 	Result wrapForAdmin(final Callable block) {
 		return catchExceptions(() -> {
@@ -104,11 +104,11 @@ abstract class BaseController extends Controller {
 	}
 
 	/**
-	 * Gets query int.
+	 * Gets the query parameter as {@link Integer}.
 	 *
 	 * @param parameterName the parameter name
 	 * @param defaultValue  the default value
-	 * @return the query int
+	 * @return the query {@link Integer}
 	 */
 	Integer getQueryInt(final String parameterName, final Integer defaultValue) {
 		try {
@@ -119,10 +119,10 @@ abstract class BaseController extends Controller {
 	}
 
 	/**
-	 * Gets query string.
+	 * Gets the query parameter as {@link String}.
 	 *
 	 * @param parameterName the parameter name
-	 * @return the query string
+	 * @return the query {@link String}
 	 */
 	String getQueryString(final String parameterName) {
 		return request().getQueryString(parameterName);

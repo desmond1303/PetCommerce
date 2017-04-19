@@ -9,7 +9,7 @@ import java.net.URLDecoder;
 import java.util.concurrent.CompletionStage;
 
 /**
- * The type Log activity action.
+ * The Log activity Action.
  *
  * @author dinopraso
  */
@@ -21,7 +21,7 @@ public class LogActivityAction extends Action<LogActivity> {
 		if (configuration.message().equals("")) {
 			Http.Request request = ctx.request();
 
-			String url = URLDecoder.decode(request.uri());
+			String url = request.uri();
 
 			long start = System.currentTimeMillis();
 			try {

@@ -9,11 +9,13 @@ import javax.inject.Inject;
 import java.util.UUID;
 
 /**
- * The type Cart controller.
+ * The Cart Controller.
  *
  * @author dinopraso
  */
 public class CartController extends BaseController {
+
+	private static final Class<Item> ITEM_CLASS = Item.class;
 
 	private CartService service;
 
@@ -28,9 +30,9 @@ public class CartController extends BaseController {
 	}
 
 	/**
-	 * Cart result.
+	 * Returns a list of all items currently in the cart for the current user.
 	 *
-	 * @return the result
+	 * @return the {@link Result}
 	 */
 	@Transactional(readOnly = true)
 	public Result cart() {
@@ -38,20 +40,20 @@ public class CartController extends BaseController {
 	}
 
 	/**
-	 * Add result.
+	 * Adds {@link Item} to the cart.
 	 *
-	 * @return the result
+	 * @return the {@link Result}
 	 */
 	@Transactional
 	public Result add() {
-		return wrapForUser(() -> this.service.add(formFactory.form(Item.class).bindFromRequest().get(), this.cache.get(session("uid"))));
+		return wrapForUser(() -> this.service.add(formFactory.form(ITEM_CLASS).bindFromRequest().get(), this.cache.get(session("uid"))));
 	}
 
 	/**
-	 * Delete result.
+	 * Removes {@link Item} the cart based on the ID.
 	 *
 	 * @param id the id
-	 * @return the result
+	 * @return the {@link Result}
 	 */
 	@Transactional
 	public Result delete(String id) {
@@ -59,9 +61,9 @@ public class CartController extends BaseController {
 	}
 
 	/**
-	 * Clear result.
+	 * Clears the cart.
 	 *
-	 * @return the result
+	 * @return the {@link Result}
 	 */
 	@Transactional
 	public Result clear() {

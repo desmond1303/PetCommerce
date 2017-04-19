@@ -11,7 +11,7 @@ import javax.inject.Inject;
 import java.util.UUID;
 
 /**
- * The type Item controller.
+ * The Item Controller.
  */
 public class ItemController extends BaseController {
 
@@ -38,9 +38,9 @@ public class ItemController extends BaseController {
 	}
 
 	/**
-	 * Create item result.
+	 * Creates new {@link Item}.
 	 *
-	 * @return the result
+	 * @return the {@link Result}
 	 */
 	@Transactional
 	public Result create() {
@@ -48,9 +48,9 @@ public class ItemController extends BaseController {
 	}
 
 	/**
-	 * Edit item result.
+	 * Edits an existing {@link Item}.
 	 *
-	 * @return the result
+	 * @return the {@link Result}
 	 */
 	@Transactional
 	public Result edit() {
@@ -58,10 +58,10 @@ public class ItemController extends BaseController {
 	}
 
 	/**
-	 * Delete item result.
+	 * Deletes an {@link Item} with given {@link UUID}.
 	 *
 	 * @param id the id
-	 * @return the result
+	 * @return the {@link Result}
 	 */
 	@Transactional
 	public Result delete(String id) {
@@ -69,9 +69,9 @@ public class ItemController extends BaseController {
 	}
 
 	/**
-	 * Gets all items.
+	 * Gets filtered list of {@link Item}.
 	 *
-	 * @return the all items
+	 * @return the {@link Result}
 	 */
 	@Transactional(readOnly = true)
 	public Result filter() {
@@ -86,10 +86,10 @@ public class ItemController extends BaseController {
 	}
 
 	/**
-	 * Gets item.
+	 * Gets item with {@link UUID}.
 	 *
 	 * @param id the id
-	 * @return the item
+	 * @return the {@link Result}
 	 */
 	@Transactional(readOnly = true)
 	public Result find(String id) {
@@ -98,9 +98,9 @@ public class ItemController extends BaseController {
 
 
 	/**
-	 * Post review result.
+	 * Post a review.
 	 *
-	 * @return the result
+	 * @return the {@link Result}
 	 */
 	@Transactional
 	public Result review() {

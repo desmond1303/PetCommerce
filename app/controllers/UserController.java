@@ -35,7 +35,7 @@ public class UserController extends BaseController {
 	/**
 	 * Login result.
 	 *
-	 * @return the result
+	 * return the {@link Result}
 	 */
 	@Transactional
 	@LogActivity(message = "User Logged In")
@@ -55,7 +55,7 @@ public class UserController extends BaseController {
 	/**
 	 * Logout result.
 	 *
-	 * @return the result
+	 * return the {@link Result}
 	 */
 	@Transactional(readOnly = true)
 	public Result logout() {
@@ -69,7 +69,7 @@ public class UserController extends BaseController {
 	/**
 	 * Register result.
 	 *
-	 * @return the result
+	 * return the {@link Result}
 	 */
 	@Transactional
 	public Result register() {
@@ -125,7 +125,7 @@ public class UserController extends BaseController {
 	/**
 	 * Edit user result.
 	 *
-	 * @return the result
+	 * return the {@link Result}
 	 */
 	@Transactional
 	public Result edit() {
@@ -136,7 +136,7 @@ public class UserController extends BaseController {
 	 * Delete user result.
 	 *
 	 * @param id the id
-	 * @return the result
+	 * return the {@link Result}
 	 */
 	@Transactional
 	public Result delete(String id) {

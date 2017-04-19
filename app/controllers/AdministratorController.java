@@ -5,7 +5,7 @@ import services.AdministratorService;
 import javax.inject.Inject;
 
 /**
- * The type Administrator controller.
+ * The Administrator Controller.
  */
 public class AdministratorController extends BaseController {
 

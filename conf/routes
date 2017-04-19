@@ -34,6 +34,7 @@ POST    /api/v1/order/fromCart                              controllers.OrderCon
 GET     /api/v1/cart                                        controllers.CartController.cart
 POST    /api/v1/cart/add                                    controllers.CartController.add
 DELETE  /api/v1/cart/delete/:id                             controllers.CartController.delete(id: String)
+GET     /api/v1/cart/clear                                  controllers.CartController.clear
 
 # ADMINISTRATOR MANAGEMENT ROUTES --------------------------------------------------------------------------------------
 

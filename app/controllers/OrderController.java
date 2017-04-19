@@ -27,7 +27,7 @@ public class OrderController extends BaseController {
 	/**
 	 * All result.
 	 *
-	 * @return the result
+	 * @return the {@link Result}
 	 */
 	@Transactional(readOnly = true)
 	public Result all() {
@@ -38,7 +38,7 @@ public class OrderController extends BaseController {
 	 * Find result.
 	 *
 	 * @param id the id
-	 * @return the result
+	 * @return the {@link Result}
 	 */
 	@Transactional(readOnly = true)
 	public Result find(String id) {
@@ -48,7 +48,7 @@ public class OrderController extends BaseController {
 	/**
 	 * From cart result.
 	 *
-	 * @return the result
+	 * @return the {@link Result}
 	 */
 	@Transactional
 	public Result fromCart() {
