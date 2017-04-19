@@ -1,0 +1,10 @@
+{{#if isLoading}}
+<div id="loader">
+  {{spinkit-folding-cube}}
+</div>
+{{/if}}
+{{page-header user=user}}
+<main>
+  {{outlet}}
+</main>
+{{page-footer classNames='footer'}}

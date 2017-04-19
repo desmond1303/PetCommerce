@@ -1,0 +1,35 @@
+<nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 search-container">
+        {{input id="search-box" type="text" class="search-box" placeholder="Search for Pet items" value=searchName}}
+        <label class="search-icon-label" for="search-box" {{action 'focusSearchBox'}}>{{fa-icon 'search'}}</label>
+        {{#if searchName}}
+          <label class="search-clear-icon-label" for="search-box" {{action 'clearSearch'}}>{{fa-icon 'times-circle'}}</label>
+        {{/if}}
+        <div class="sort-button" {{action 'toggleSort'}}>{{fa-icon sortBy.icon}}</div>
+        <div class="sort-popup">
+          {{#each sortIcons as |icon|}}
+          <p class={{if (eq icon.id sortBy.id) 'active'}} {{action 'setSort' icon.id}}>{{fa-icon icon.icon}}{{icon.name}}</p>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="store-items-contrainer {{if application.isLoading 'component-loading'}}">
+  <div class="container">
+    <div class="row">
+      {{#each model.model as |item|}}
+        <div class="col-xs-6 col-sm-4 col-md-3">
+          {{store-item item=item}}
+        </div>
+      {{/each}}
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        {{page-numbers current=model.pageNumber max=model.numberOfPages}}
+      </div>
+    </div>
+  </div>
+</div>

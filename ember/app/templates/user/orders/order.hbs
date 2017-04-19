@@ -1,0 +1,4 @@
+<p>Order {{model.id}}</p>
+{{#each model.items as |item|}}
+  {{item.item.name}}
+{{/each}}

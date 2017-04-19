@@ -1,0 +1,20 @@
+<header>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        {{#link-to 'index' classNames='site-name'}}<h1>{{fa-icon 'paw'}}PET<span>Commerce</span></h1>{{/link-to}}
+        <nav>
+          <ul>
+            {{#link-to 'index'}}<li>{{fa-icon 'home'}}Home</li>{{/link-to}}
+            {{#link-to 'store'}}<li>{{fa-icon 'shopping-cart'}}Store</li>{{/link-to}}
+            {{#if user.isLoggedIn}}
+              {{#link-to 'user'}}<li>{{fa-icon 'user'}}{{user.object.name}}</li>{{/link-to}}
+            {{else}}
+              {{#link-to 'login'}}<li>{{fa-icon 'sign-in'}}Login</li>{{/link-to}}
+            {{/if}}
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>

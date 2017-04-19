@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1>My Orders</h1>
+    </div>
+  </div>
+  <div class="row orders-container {{if application.isLoading 'component-loading'}}">
+    {{#each model as |order|}}
+    <div class="col-xs-12">
+      <div class="order">
+        {{#link-to 'user.orders.order' order.id}}Order {{millisToDate order.date}}{{/link-to}}
+        {{outlet}}
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</div>

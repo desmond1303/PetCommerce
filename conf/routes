@@ -1,0 +1,45 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# USER MANAGEMENT ROUTES -----------------------------------------------------------------------------------------------
+
+GET     /api/v1/user/getCurrent                             controllers.UserController.getCurrent
+
+POST    /api/v1/login                                       controllers.UserController.login
+POST    /api/v1/logout                                      controllers.UserController.logout
+POST    /api/v1/register                                    controllers.UserController.register
+
+GET     /api/v1/user/all                                    controllers.UserController.all
+GET     /api/v1/user/find/:id                               controllers.UserController.find(id: String)
+PATCH   /api/v1/user/edit                                   controllers.UserController.edit
+DELETE  /api/v1/user/delete/:id                             controllers.UserController.delete(id: String)
+
+# ITEM MANAGEMENT ROUTES -----------------------------------------------------------------------------------------------
+
+GET     /api/v1/item/filter                                 controllers.ItemController.filter
+GET     /api/v1/item/find/:id                               controllers.ItemController.find(id: String)
+POST    /api/v1/item/create                                 controllers.ItemController.create
+PUT     /api/v1/item/edit                                   controllers.ItemController.edit
+DELETE  /api/v1/item/delete/:id                             controllers.ItemController.delete(id: String)
+
+# ORDER MANAGEMENT ROUTES ----------------------------------------------------------------------------------------------
+
+GET     /api/v1/order/all                                   controllers.OrderController.all
+GET     /api/v1/order/:id                                   controllers.OrderController.find(id: String)
+POST    /api/v1/order/fromCart                              controllers.OrderController.fromCart
+
+# ADMINISTRATOR MANAGEMENT ROUTES --------------------------------------------------------------------------------------
+
+GET     /api/v1/cart                                        controllers.CartController.cart
+POST    /api/v1/cart/add                                    controllers.CartController.add
+DELETE  /api/v1/cart/delete/:id                             controllers.CartController.delete(id: String)
+
+# ADMINISTRATOR MANAGEMENT ROUTES --------------------------------------------------------------------------------------
+
+# EMBER PASSTHROUGH ROUTES ---------------------------------------------------------------------------------------------
+
+GET     /assets/*file                                       controllers.Assets.at(path="/public/assets", file)
+GET     /fonts/*file                                        controllers.Assets.at(path="/public/fonts", file)
+GET     /                                                   controllers.EmberController.index(slug="")
+GET     /*slug                                              controllers.EmberController.index(slug)

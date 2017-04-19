@@ -1,0 +1,6 @@
+{{#each model as |cartItem|}}
+Item: {{cartItem.item.name}}
+Quantity: {{cartItem.quantity}}
+{{/each}}
+
+<p {{action 'order'}}>Order</p>

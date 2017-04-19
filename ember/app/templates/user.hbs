@@ -1,0 +1,15 @@
+<nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        {{#link-to 'user.index' classNames='nav-item left-item'}}{{fa-icon 'tachometer'}}Dashboard{{/link-to}}
+        {{#link-to 'user.cart' classNames='nav-item left-item'}}{{fa-icon 'shopping-cart'}}Cart{{/link-to}}
+        {{#link-to 'user.orders' classNames='nav-item left-item'}}{{fa-icon 'list'}}My Orders{{/link-to}}
+        <p {{action 'logout'}} class="nav-item right-item">{{fa-icon 'sign-out'}}Logout</p>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="container">
+  {{outlet}}
+</div>

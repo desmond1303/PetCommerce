@@ -1,0 +1,13 @@
+{{#link-to 'store.item' item.id class='store-item'}}
+  <p class="quantity-left">
+    {{#if (eq item.quantity 0)}}
+    {{fa-icon 'flag-checkered'}}Sold Out
+    {{else}}
+    {{item.quantity}} left
+    {{/if}}
+  </p>
+  <div class="image" style={{mainPhoto}}>
+
+  </div>
+  <h3 class="item-name">{{item.name}}</h3><h3 class="item-price">{{fa-icon 'usd'}}{{item.price}}</h3>
+{{/link-to}}

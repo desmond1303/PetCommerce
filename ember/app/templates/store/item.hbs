@@ -1,0 +1,55 @@
+<nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        {{#link-to 'store.index' classNames='nav-item left-item'}}{{fa-icon 'chevron-left'}}Store{{/link-to}}
+        <p class="nav-item right-item">{{fa-icon 'flag'}}Report</p>
+        <p class="nav-item right-item">{{fa-icon 'star'}}Rate</p>
+        <p class="nav-item right-item">{{fa-icon 'bookmark-o'}}Save for Later</p>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="item-details-container {{if application.isLoading 'component-loading'}}">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-5">
+        <div class="image" style={{currentPhoto}}>
+          <div class="row gallery-controls">
+            <div class="col-xs-4">
+              {{#if hasPreviousPhoto}}
+                <p class="button" {{action 'previousPhoto'}}>{{fa-icon 'chevron-circle-left'}}</p>
+              {{/if}}
+            </div>
+            <div class="col-xs-4">
+              <p>{{currentPhotoNumber}} of {{photoCount}}</p>
+            </div>
+            <div class="col-xs-4">
+              {{#if hasNextPhoto}}
+                <p class="button" {{action 'nextPhoto'}}>{{fa-icon 'chevron-circle-right'}}</p>
+              {{/if}}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-7">
+        <div class="item-name-and-price">
+          <h1 class="item-name">{{item.name}}</h1>
+          <div id="add-to-cart-button" class="buy-now-button" {{action 'addToCart'}}>
+            {{fa-icon 'usd'}}{{item.price}}<span>|</span>{{fa-icon 'paypal'}} Add to Cart
+          </div>
+          <div id="adding-to-cart">
+            {{fa-icon 'circle-o-notch' spin=true}} Adding...
+          </div>
+          <div id="added-to-cart">
+            {{fa-icon 'check'}} Added
+          </div>
+          <div class="item-quantity">
+            Quantity {{input type='number' min=1 max=item.quantity value=quantityToBuy}}
+          </div>
+        </div>
+        <p class="item-description">{{item.description}}</p>
+      </div>
+    </div>
+  </div>
+</div>
