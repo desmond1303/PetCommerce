@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12 search-container">
-        {{input id="search-box" type="text" class="search-box" placeholder="Search for Pet items" value=searchName}}
+        {{input id="search-box" type="text" class="search-box" placeholder="Search for Pet items" value=searchName escape-press='clearSearch'}}
         <label class="search-icon-label" for="search-box" {{action 'focusSearchBox'}}>{{fa-icon 'search'}}</label>
         {{#if searchName}}
           <label class="search-clear-icon-label" for="search-box" {{action 'clearSearch'}}>{{fa-icon 'times-circle'}}</label>

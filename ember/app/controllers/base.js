@@ -16,4 +16,9 @@ export default Ember.Controller.extend({
   isLoggedIn: alias('application.user.isLoggedIn'),
   user: alias('application.user.object'),
   ajax: service('ajax'),
+
+  setError(hasError, message) {
+    this.set('hasError', hasError);
+    this.set('errorMessage', hasError ? message : null);
+  },
 });

@@ -17,8 +17,8 @@
         </div>
         <div class="row">
           <div class="col-xs-12">
-              {{input id='email' class='form-control' type='email' placeholder='Email' value=email}}
-              {{input id='password' class='form-control' type='password' placeholder='Password'value=password}}
+              {{input id='email' class='form-control' type='email' placeholder='Email' value=email required=true}}
+              {{input id='password' class='form-control' type='password' placeholder='Password'value=password required=true}}
             <button class="form-button" type="submit">Login</button>
             <h5 class="form-link" {{action 'setForm' 'register'}}>Create Account</h5>
           </div>
@@ -34,10 +34,10 @@
         </div>
         <div class="row">
           <div class="col-xs-12">
-            {{input class='form-control' type='text' placeholder='Name' value=name}}
-            {{input class='form-control' id="username" type='email' placeholder='Email' value=email}}
-            {{input class='form-control' type='password' placeholder='Password'value=password}}
-            {{input class='form-control' type='password' placeholder='Confirm Password'value=confurm_password}}
+            {{input class='form-control' type='text' placeholder='Name' value=name required=true}}
+            {{input class='form-control' id="username" type='email' placeholder='Email' value=email required=true}}
+            {{input class='form-control' type='password' placeholder='Password'value=password required=true}}
+            {{input class='form-control' type='password' placeholder='Confirm Password'value=confirm_password focus-out='validatePassword' required=true}}
             <button class="form-button" type="submit">Create Account</button>
             <h5 class="form-link" {{action 'setForm' 'login'}}>Login</h5>
           </div>

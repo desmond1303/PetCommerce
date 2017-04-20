@@ -40,5 +40,13 @@ export default Base.extend({
         password: this.get('password'),
       });
     },
+
+    validatePassword() {
+      if (this.get('password') !== this.get('confirm_password')) {
+        this.setError(true, 'Your passwords don\'t match');
+      } else {
+        this.setError(false);
+      }
+    },
   },
 });

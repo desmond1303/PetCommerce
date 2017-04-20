@@ -5,7 +5,7 @@ import play.mvc.Action;
 import play.mvc.Http;
 import play.mvc.Result;
 
-import java.net.URLDecoder;
+import java.util.Date;
 import java.util.concurrent.CompletionStage;
 
 /**
@@ -14,7 +14,7 @@ import java.util.concurrent.CompletionStage;
  * @author dinopraso
  */
 public class LogActivityAction extends Action<LogActivity> {
-	private static final String LOGG_PATTERN = "host={}, http_method={}, url=\"{}\", duration={} ms";
+	private static final String LOG_PATTERN = "date={}, host={}, http_method={}, url=\"{}\", duration={} ms";
 
 	@Override
 	public CompletionStage<Result> call(Http.Context ctx) {
@@ -28,7 +28,7 @@ public class LogActivityAction extends Action<LogActivity> {
 				return delegate.call(ctx);
 			} finally {
 				long duration = System.currentTimeMillis() - start;
-				Logger.info(LOGG_PATTERN, request.remoteAddress(), request.method(), url, duration);
+				Logger.info(LOG_PATTERN, new Date(System.currentTimeMillis()).toString(), request.remoteAddress(), request.method(), url, duration);
 			}
 		} else {
 			Logger.info(configuration.message());
