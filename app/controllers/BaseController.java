@@ -1,6 +1,6 @@
 package controllers;
 
-import actions.LogActivity;
+import annotations.LogActivity;
 import exceptions.ServiceException;
 import models.tables.User;
 import play.cache.CacheApi;

@@ -1,9 +1,9 @@
 package controllers;
 
-import actions.LogActivity;
+import annotations.LogActivity;
+import models.forms.LoginForm;
+import models.forms.RegisterForm;
 import models.helpers.SessionUser;
-import models.helpers.forms.LoginForm;
-import models.helpers.forms.RegisterForm;
 import models.tables.User;
 import play.db.jpa.Transactional;
 import play.mvc.Result;
@@ -69,7 +69,7 @@ public class UserController extends BaseController {
 	/**
 	 * Register result.
 	 *
-	 * return the {@link Result}
+	 * @return the {@link Result}
 	 */
 	@Transactional
 	public Result register() {
@@ -104,18 +104,18 @@ public class UserController extends BaseController {
 	/**
 	 * Gets all users.
 	 *
-	 * @return the all users
+	 * @return the {@link Result}
 	 */
 	@Transactional(readOnly = true)
 	public Result all() {
-		return wrapForAdmin(() -> this.service.findAll());
+		return wrapForAdmin(() -> this.service.all());
 	}
 
 	/**
 	 * Gets user.
 	 *
 	 * @param userId the user id
-	 * @return the user
+	 * @return the {@link User}
 	 */
 	@Transactional(readOnly = true)
 	public Result find(String userId) {
@@ -125,7 +125,7 @@ public class UserController extends BaseController {
 	/**
 	 * Edit user result.
 	 *
-	 * return the {@link Result}
+	 * @return the {@link Result}
 	 */
 	@Transactional
 	public Result edit() {
@@ -136,7 +136,7 @@ public class UserController extends BaseController {
 	 * Delete user result.
 	 *
 	 * @param id the id
-	 * return the {@link Result}
+	 * @return the {@link Result}
 	 */
 	@Transactional
 	public Result delete(String id) {

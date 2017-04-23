@@ -1,5 +1,6 @@
 package actions;
 
+import annotations.LogActivity;
 import play.Logger;
 import play.mvc.Action;
 import play.mvc.Http;

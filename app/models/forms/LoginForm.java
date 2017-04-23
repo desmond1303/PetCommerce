@@ -1,4 +1,4 @@
-package models.helpers.forms;
+package models.forms;
 
 import models.BaseModel;
 

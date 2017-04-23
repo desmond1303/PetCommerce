@@ -3,7 +3,6 @@ package controllers;
 import models.helpers.ItemFilter;
 import models.tables.Item;
 import models.tables.ItemReview;
-import play.Logger;
 import play.db.jpa.Transactional;
 import play.mvc.Result;
 import services.ItemService;

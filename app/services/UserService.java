@@ -1,8 +1,8 @@
 package services;
 
 import exceptions.ServiceException;
-import models.helpers.forms.LoginForm;
-import models.helpers.forms.RegisterForm;
+import models.forms.LoginForm;
+import models.forms.RegisterForm;
 import models.tables.User;
 import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
@@ -22,10 +22,10 @@ public class UserService extends BaseService {
 	private UserService() { }
 
 	/**
-	 * Authenticate account.
+	 * Authenticate user.
 	 *
 	 * @param loginForm the login form
-	 * @return the account
+	 * @return the {@link User}
 	 * @throws ServiceException the service exception
 	 */
 	public User authenticate(final LoginForm loginForm) throws ServiceException {
@@ -49,14 +49,14 @@ public class UserService extends BaseService {
 	}
 
 	/**
-	 * Register account.
+	 * Register user.
 	 *
 	 * @param registerForm the register form
-	 * @return the account
+	 * @return the {@link User}
 	 */
 	public User register(final RegisterForm registerForm) {
 		try {
-			User newUser = registerForm.createAccount();
+			User newUser = registerForm.createUser();
 			getSession().save(newUser);
 			return newUser;
 		} catch (Exception e) {
@@ -90,7 +90,7 @@ public class UserService extends BaseService {
 	 * Gets user.
 	 *
 	 * @param userId the user id
-	 * @return the user
+	 * @return the {@link User}
 	 */
 	public User find(final UUID userId) {
 		return (User) getSession().createCriteria(User.class)
@@ -99,10 +99,10 @@ public class UserService extends BaseService {
 	}
 
 	/**
-	 * Get account.
+	 * Get user.
 	 *
 	 * @param email the email
-	 * @return the account
+	 * @return the {@link User}
 	 */
 	public User find(final String email) {
 		return (User) getSession().createCriteria(User.class)
@@ -113,10 +113,10 @@ public class UserService extends BaseService {
 	/**
 	 * Gets all users.
 	 *
-	 * @return the all users
+	 * @return the {@link List} of {@link User}
 	 */
 	@SuppressWarnings("unchecked")
-	public List<User> findAll() {
+	public List<User> all() {
 		return (List<User>) getSession().createCriteria(User.class).list();
 	}
 
@@ -124,7 +124,7 @@ public class UserService extends BaseService {
 	 * Edit user boolean.
 	 *
 	 * @param user the user
-	 * @return the boolean
+	 * @return the {@link Boolean}
 	 */
 	public Boolean edit(User user) {
 		if (user.getId() != null) {

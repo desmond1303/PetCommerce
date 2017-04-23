@@ -1,4 +1,4 @@
-package models.helpers.forms;
+package models.forms;
 
 import models.BaseModel;
 import models.tables.User;
@@ -45,11 +45,11 @@ public class RegisterForm extends BaseModel {
 	}
 
 	/**
-	 * Create account account.
+	 * Create user.
 	 *
-	 * @return the account
+	 * @return the {@link User}
 	 */
-	public User createAccount() {
+	public User createUser() {
 		return new User(this.name, this.email, this.password);
 	}
 }

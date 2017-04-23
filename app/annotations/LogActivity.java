@@ -1,5 +1,6 @@
-package actions;
+package annotations;
 
+import actions.LogActivityAction;
 import play.mvc.With;
 
 import java.lang.annotation.ElementType;
